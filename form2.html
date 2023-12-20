@@ -1,0 +1,15 @@
+6) Docker container using docker image:
+
+-sudo su -
+-yum install docker -y
+-service docker start
+-service docker status
+-docker search tomcat
+-docker pull tomcat
+-docker images
+-docker run -d --name tomcat -p 8081:8080 tomcat
+-docker exec -it tomcat /bin/bash
+-pwd
+-ll
+-cd webapps.dist
+-cp -R * ../webapps
