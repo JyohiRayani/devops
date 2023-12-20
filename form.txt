@@ -1,0 +1,45 @@
+4) installation :
+->sudo su -
+->yum install git -y
+->jenkins download in google and paste commands,
+->sudo wget -0, 
+->sudo rpm, 
+->sudo yum install java-17-amazon-corretto-devel
+->sudo dnf install jenkins (or) yum install jenkins
+->sudo systemctl enable jenkins
+->sudo systemctl start jenkins
+->copy ipv4 and paste it in chrome,
+	->copy that /var……
+	->paste in instance as ->cat that url
+->click on install suggested plugins
+->fill the details click save and continue
+->click start jenkins
+Maven installation:
+->cd /opt
+->wget .zip URL
+->ll -a
+->unzip vachina URL of  zip file 
+->mv old name maven
+->cd maven
+->cd bin
+->./mvn -v
+->ll -a
+->pwd
+	go to root user and open .bash_profile file
+
+
+->vi .bash_profile
+Adding below address:
+
+M2 HOME=/opt/maven
+M2=/opt/maven/bin
+JAVA HOME=/usr/lib/jvm/java-17-amazon -corretto.x86 64 
+PATH=$PATH:$HOME/bin:EM2_HOME:$M2:$JAVA_HOME
+#User specific environment and startup programs
+
+->open jenkins server install plugin “Maven Integration”
+->go to manage jenkins and go to tools add idk and maven
+->names as idk,maven
+->paths as  /usr/lib/jvm/java-17-amazon -corretto.x86 64 , /opt/maven
+->now save and continue 
+->click on build now it generates .war file in target folder when we click on workspace
