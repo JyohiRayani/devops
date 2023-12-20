@@ -1,0 +1,58 @@
+5)Tomcat using jenkins:
+->sudo su -
+->wget .zip URL
+->ll -a
+->unzip vachina URL of  zip file 
+->mv old name tomcat
+->cd tomcat
+->chmod -R u=rwx bin
+->ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup
+->ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown
+->tomcatup
+->sudo yum install java-17-amazon-corretto-devel
+->tomcatup
+->find / -name context.xml
+->last 2 files we have modify by using ->vi address
+->cd conf
+->ls
+->vi tomcat-users.xml
+ Code:
+< tomcat-users xmlns="http://tomcat.apache.org/xml"
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
+
+version="1.0">
+
+<role rolename="manager-gui"/> <role rolename="manager-script"/>
+
+<role rolename="manager-jmx"/> <role rolename="manager-status"/>
+
+<user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+
+<user
+
+username="deployer" password="deployer" roles="manager-script"/>
+
+<user username="user" password="user" roles="manager-gui"/> 
+
+->dashboard
+	->mange plugins
+		->credentials
+			->system
+				->global credentials 
+					->enter username…
+
+->dashbd
+	->maven
+		->configuration
+			->GitHub project url
+				->save and apply
+			->repository url
+				->save and apply
+					->build triggers
+						->poll scm 
+							->deploy war/ear to a container (enter **/*.war, credentials, tomcat url)
+							->save and apply
+->open new tab and paste ipv4 address:8080
+->click on manager app
+->login with developer details
